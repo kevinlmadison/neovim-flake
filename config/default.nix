@@ -115,9 +115,9 @@
       # astyle
       black
       cmake-format
-      # gofumpt
-      # golines
-      # gotools
+      gofumpt
+      golines
+      gotools
       isort
       # nodePackages.prettier
       # prettierd
@@ -127,7 +127,7 @@
       # Linters
       # commitlint
       # eslint_d
-      # golangci-lint
+      golangci-lint
       # hadolint
       # html-tidy
       luajitPackages.luacheck
@@ -146,7 +146,7 @@
       # delve
       # fd
       # gdb
-      # go
+      go
       # lldb_17
       # llvmPackages_17.bintools-unwrapped
       marksman

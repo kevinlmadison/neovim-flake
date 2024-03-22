@@ -7,6 +7,7 @@
       bashls.enable = true;
       clangd.enable = true;
       cmake.enable = true;
+			gopls.enable = true;
 			helm-ls.enable = true;
       jsonls.enable = true;
       lua-ls = {
@@ -113,6 +114,13 @@
 
       -- cmake LSP
       require("lspconfig").cmake.setup({
+      	on_attach = function()
+      		set_cmn_lsp_keybinds()
+      	end,
+      })
+
+      -- golang lsp
+      require("lspconfig").gopls.setup({
       	on_attach = function()
       		set_cmn_lsp_keybinds()
       	end,
