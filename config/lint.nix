@@ -2,7 +2,7 @@
   plugins.lint = {
     enable = true;
     lintersByFt = {
-      ansible = ["ansible-lint" "yamllint"];
+      ansible = ["ansible_lint" "yamllint"];
       c = ["clangtidy"];
       cpp = ["clangtidy"];
       css = ["eslint_d"];

@@ -117,6 +117,7 @@
       alejandra
       # asmfmt
       # astyle
+      ansible-language-server
       black
       cmake-format
       gofumpt
@@ -151,6 +152,7 @@
       # delve
       # fd
       # gdb
+      ansible
       go
       # lldb_17
       # llvmPackages_17.bintools-unwrapped

@@ -4,7 +4,7 @@
     servers = {
       ansiblels = {
         enable = true;
-        filetypes = ["yaml.ansible" "ansible"];
+        filetypes = ["yaml" "yaml.ansible" "ansible"];
       };
       bashls.enable = true;
       clangd.enable = true;
