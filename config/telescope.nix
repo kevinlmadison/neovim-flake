@@ -1,11 +1,10 @@
-{pkgs, ...}: {
-
+{...}: {
   plugins.telescope = {
     enable = true;
-		extensions = {
-			file_browser.enable = true;
-			fzf-native.enable = true;
-		};
+    extensions = {
+      file_browser.enable = true;
+      fzf-native.enable = true;
+    };
     keymaps = {
       "<leader>?" = {
         action = "oldfiles";

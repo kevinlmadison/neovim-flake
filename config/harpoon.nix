@@ -1,5 +1,4 @@
-{pkgs, ...}: {
-
+{...}: {
   plugins.harpoon.enable = true; # The name, is the harpoon-maker-agen
   extraConfigLua = ''
     -- Primeagen Harpoon config

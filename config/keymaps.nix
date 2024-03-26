@@ -1,5 +1,4 @@
-{pkgs, ...}: {
-
+{...}: {
   keymaps = [
     {
       key = "<leader>pv";

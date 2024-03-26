@@ -1,4 +1,8 @@
-{pkgs, lib, ...}: {
+{
+  pkgs,
+  lib,
+  ...
+}: {
   imports = [
     ./keymaps.nix
     ./style.nix
@@ -11,7 +15,7 @@
     ./format.nix
     ./lint.nix
     ./debug.nix
-		./gitsigns.nix
+    ./gitsigns.nix
   ];
 
   config = {
@@ -37,8 +41,8 @@
       updatetime = 50;
       foldlevelstart = 99;
       clipboard = "unnamedplus";
-			breakindent = true;
-			completeopt = "menu,menuone,noselect";
+      breakindent = true;
+      completeopt = "menu,menuone,noselect";
     };
 
     highlight = {
@@ -49,24 +53,24 @@
     };
 
     plugins = {
-			cursorline = {
-				enable = true;
-				cursorline = {
-				  enable = true;
-					timeout = 0;
-					number = true;
-				};
-			};
+      cursorline = {
+        enable = true;
+        cursorline = {
+          enable = true;
+          timeout = 0;
+          number = true;
+        };
+      };
       oil.enable = true;
       undotree.enable = true;
       fugitive.enable = true;
       nvim-tree.enable = true;
-			indent-blankline.enable = true;
+      indent-blankline.enable = true;
       friendly-snippets.enable = true;
-			comment-nvim.enable = true;
-			surround.enable = true;
+      comment-nvim.enable = true;
+      surround.enable = true;
       navic.enable = true;
-			# mini.modules.pairs = {};
+      # mini.modules.pairs = {};
       nvim-autopairs.enable = true;
       nvim-autopairs.checkTs = true;
       ts-context-commentstring.enable = true;
@@ -110,7 +114,7 @@
     };
     extraPackages = with pkgs; [
       # Formatters
-      # alejandra
+      alejandra
       # asmfmt
       # astyle
       black
@@ -119,14 +123,15 @@
       golines
       gotools
       isort
-      # nodePackages.prettier
-      # prettierd
+      nodePackages.prettier
+      prettierd
       rustfmt
       shfmt
       stylua
       # Linters
       # commitlint
       # eslint_d
+      ansible-lint
       golangci-lint
       # hadolint
       # html-tidy
@@ -136,7 +141,7 @@
       pylint
       ruff
       shellcheck
-			nil
+      nil
       # vale
       yamllint
       # Debuggers / misc deps
@@ -151,12 +156,12 @@
       # llvmPackages_17.bintools-unwrapped
       marksman
 
-    (nerdfonts.override {
-      fonts = [
-        "JetBrainsMono"
-        "RobotoMono"
-      ];
-    })
+      (nerdfonts.override {
+        fonts = [
+          "JetBrainsMono"
+          "RobotoMono"
+        ];
+      })
 
       python3
       ripgrep

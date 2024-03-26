@@ -1,8 +1,8 @@
-{pkgs, ...}: {
-
+{...}: {
   plugins.lint = {
     enable = true;
     lintersByFt = {
+      ansible = ["ansible-lint" "yamllint"];
       c = ["clangtidy"];
       cpp = ["clangtidy"];
       css = ["eslint_d"];
