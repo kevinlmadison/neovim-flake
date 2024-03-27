@@ -63,6 +63,8 @@
       };
       oil.enable = true;
       undotree.enable = true;
+      flash.enable = true;
+      none-ls.enable = true;
       fugitive.enable = true;
       nvim-tree.enable = true;
       indent-blankline.enable = true;
