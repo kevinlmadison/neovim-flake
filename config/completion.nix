@@ -4,6 +4,7 @@
       enable = true;
       autoEnableSources = false;
       settings = {
+        performance.max_view_entries = 16;
         snippet = {
           expand = ''
             function(args)

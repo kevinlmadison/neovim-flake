@@ -1,6 +1,7 @@
 {...}: {
   plugins.telescope = {
     enable = true;
+    highlightTheme = "rose-pine";
     extensions = {
       file_browser.enable = true;
       fzf-native.enable = true;

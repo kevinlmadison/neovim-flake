@@ -13,6 +13,7 @@
     rose-pine = {
       enable = true;
       transparentBackground = true;
+      transparentFloat = true;
     };
   };
   plugins = {
