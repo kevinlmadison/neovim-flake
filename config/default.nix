@@ -128,7 +128,7 @@
       stylua
       # Linters
       # commitlint
-      # eslint_d
+      eslint_d
       ansible-lint
       golangci-lint
       # hadolint
