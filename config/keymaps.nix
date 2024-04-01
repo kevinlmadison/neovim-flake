@@ -317,5 +317,66 @@
         desc = "Stepout of DAP debug";
       };
     }
+    # Trouble.nvim Bindings
+    {
+      key = "<leader>xx";
+      mode = "n";
+      action = ":lua require'trouble'.toggle()<CR>";
+      options = {
+        silent = true;
+        noremap = true;
+        desc = "Toggle Trouble";
+      };
+    }
+    {
+      key = "<leader>xw";
+      mode = "n";
+      action = ":lua require'trouble'.toggle('workspack_diagnostics')<CR>";
+      options = {
+        silent = true;
+        noremap = true;
+        desc = "Toggle Trouble Workspace Diagnostics";
+      };
+    }
+    {
+      key = "<leader>xd";
+      mode = "n";
+      action = ":lua require'trouble'.toggle('document_diagnostics')<CR>";
+      options = {
+        silent = true;
+        noremap = true;
+        desc = "Toggle Trouble Document Diagnostics";
+      };
+    }
+    {
+      key = "<leader>xq";
+      mode = "n";
+      action = ":lua require'trouble'.toggle('quickfix')<CR>";
+      options = {
+        silent = true;
+        noremap = true;
+        desc = "Toggle Trouble Quickfix";
+      };
+    }
+    {
+      key = "<leader>xl";
+      mode = "n";
+      action = ":lua require'trouble'.toggle('loclist')<CR>";
+      options = {
+        silent = true;
+        noremap = true;
+        desc = "Toggle Trouble LocList";
+      };
+    }
+    {
+      key = "gR";
+      mode = "n";
+      action = ":lua require'trouble'.toggle('lsp_references')<CR>";
+      options = {
+        silent = true;
+        noremap = true;
+        desc = "Toggle Trouble LSP References";
+      };
+    }
   ];
 }
