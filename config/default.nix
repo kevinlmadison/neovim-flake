@@ -70,6 +70,7 @@
       # mini.modules.pairs = {};
       nvim-autopairs.enable = true;
       nvim-autopairs.checkTs = true;
+      trouble.enable = true;
       ts-context-commentstring.enable = true;
       which-key = {
         enable = true;
