@@ -331,7 +331,7 @@
     {
       key = "<leader>xw";
       mode = "n";
-      action = ":lua require'trouble'.toggle('workspack_diagnostics')<CR>";
+      action = ":lua require'trouble'.toggle('workspace_diagnostics')<CR>";
       options = {
         silent = true;
         noremap = true;
