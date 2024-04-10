@@ -30,7 +30,7 @@
       colorcolumn = "80";
       relativenumber = true;
       shiftwidth = 2;
-      shiftrount = true;
+      shiftround = true;
       tabstop = 2;
       softtabstop = 2;
       expandtab = true;
