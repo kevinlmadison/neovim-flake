@@ -20,12 +20,23 @@
     };
 
     options = {
+      autoindent = true;
+      backspace = "indent,eol,start";
+      smartcase = true;
+      smartindent = true;
+      smarttab = true;
+      ignorecase = true;
       number = true;
       colorcolumn = "80";
       relativenumber = true;
       shiftwidth = 2;
+      shiftrount = true;
       tabstop = 2;
-      wrap = false;
+      softtabstop = 2;
+      expandtab = true;
+      list = true;
+      listchars = "trail:¬,precedes:«,extends:»,tab:→⋅";
+      wrap = true;
       swapfile = false; #Undotree
       backup = false; #Undotree
       undofile = true;
