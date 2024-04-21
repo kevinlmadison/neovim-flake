@@ -28,6 +28,7 @@
       ignorecase = true;
       number = true;
       colorcolumn = "80";
+      cursorcolumn = true;
       relativenumber = true;
       shiftwidth = 2;
       shiftround = true;
