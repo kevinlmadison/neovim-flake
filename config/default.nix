@@ -70,6 +70,7 @@
         };
       };
       oil.enable = true;
+      ollama.enable = true;
       undotree.enable = true;
       flash.enable = true;
       fugitive.enable = true;
