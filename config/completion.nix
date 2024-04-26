@@ -3,6 +3,37 @@
     cmp = {
       enable = true;
       autoEnableSources = false;
+      cmdline = {
+        "/" = {
+          mapping = {
+            __raw = "cmp.mapping.preset.cmdline()";
+          };
+          sources = [
+            {
+              name = "buffer";
+            }
+          ];
+        };
+        ":" = {
+          mapping = {
+            __raw = "cmp.mapping.preset.cmdline()";
+          };
+          sources = [
+            {
+              name = "path";
+            }
+            {
+              name = "cmdline";
+              option = {
+                ignore_cmds = [
+                  "Man"
+                  "!"
+                ];
+              };
+            }
+          ];
+        };
+      };
       settings = {
         performance.max_view_entries = 16;
         snippet = {
@@ -61,7 +92,7 @@
         sources = [
           {name = "nvim_lsp";}
           {name = "nvim_lua";}
-          {name = "cmdline";}
+          # {name = "cmdline";}
           {name = "luasnip";}
           {name = "path";}
           {name = "buffer";}
@@ -91,18 +122,5 @@
     	'confirm_done',
     	cmp_autopairs.on_confirm_done()
     )
-      cmp.setup.cmdline(":", {
-      	mapping = cmp.mapping.preset.cmdline(),
-      	sources = cmp.config.sources({
-      		{ name = "path" },
-      	}, {
-      		{
-      			name = "cmdline",
-      			option = {
-      				ignore_cmds = { "Man", "!" },
-      			},
-      		},
-      	}),
-      })
   '';
 }
