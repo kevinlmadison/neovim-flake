@@ -22,8 +22,7 @@
       };
       nixd.enable = true;
       nil_ls.enable = true;
-      ruff.enable = true;
-      # ruff-lsp.enable = true;
+      ruff-lsp.enable = true;
       # pylsp = with lib; {
       #   enable = mkDefault true;
       #   settings.plugins = {
