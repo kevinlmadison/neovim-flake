@@ -44,7 +44,6 @@
           };
         };
       };
-      rooter.patterns = ["pyproject.toml" "setup.py" "requirements.txt"];
       rust-analyzer = {
         enable = true;
         installCargo = true;
