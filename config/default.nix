@@ -152,6 +152,7 @@
       nodePackages.jsonlint
       pylint
       ruff
+      ruff-lsp
       shellcheck
       nil
       # vale
