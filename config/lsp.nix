@@ -22,7 +22,9 @@
       };
       nixd.enable = true;
       nil_ls.enable = true;
-      ruff-lsp.enable = true;
+      ruff-lsp = {
+        enable = true;
+      };
       # pylsp = with lib; {
       #   enable = mkDefault true;
       #   settings.plugins = {
@@ -195,11 +197,19 @@
       -- })
 
       -- Python LSP
-      require("lspconfig").ruff_lsp.setup({
-      	on_attach = function()
-      		set_cmn_lsp_keybinds()
-      	end,
-      })
+      require('lspconfig').ruff_lsp.setup {
+        init_options = {
+          settings = {
+            -- Any extra CLI arguments for `ruff` go here.
+            args = {},
+          }
+        }
+      }
+      -- require("lspconfig").ruff_lsp.setup({
+      -- 	on_attach = function()
+      -- 		set_cmn_lsp_keybinds()
+      -- 	end,
+      -- })
 
        -- Rust LSP
       require("lspconfig").rust_analyzer.setup({
