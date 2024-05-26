@@ -18,7 +18,11 @@
       };
       nixd.enable = true;
       nil_ls.enable = true;
-      ruff-lsp.enable = true;
+      # ruff.enable = true;
+      # ruff-lsp.enable = true;
+      pylsp = {
+        enable = true;
+      };
       rust-analyzer = {
         enable = true;
         installCargo = true;
