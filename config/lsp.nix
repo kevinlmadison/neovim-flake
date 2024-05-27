@@ -22,8 +22,18 @@
       };
       nixd.enable = true;
       nil_ls.enable = true;
+      none-ls = {
+        enable = true;
+        sources.formatting = {
+          black = {
+            enable = true;
+          };
+        };
+        rootDir = ''require("null-ls.utils").root_pattern(".git")'';
+      };
       ruff-lsp = {
         enable = true;
+        rootDir = ''require("null-ls.utils").root_pattern(".git")'';
       };
       # pylsp = with lib; {
       #   enable = mkDefault true;
