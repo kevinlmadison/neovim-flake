@@ -22,11 +22,11 @@
       };
       nixd.enable = true;
       nil_ls.enable = true;
-      pylsp.enable = true;
-      # ruff-lsp = {
-      #   enable = true;
-      #   rootDir = ''require("null-ls.utils").root_pattern(".git")'';
-      # };
+      pyright.enable = true;
+      ruff-lsp = {
+        enable = true;
+        # rootDir = ''require("null-ls.utils").root_pattern(".git")'';
+      };
       # pylsp = with lib; {
       #   enable = mkDefault true;
       #   settings.plugins = {
