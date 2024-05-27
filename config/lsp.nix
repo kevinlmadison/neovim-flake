@@ -22,30 +22,31 @@
       };
       nixd.enable = true;
       nil_ls.enable = true;
+      pyright.enable = true;
       # ruff-lsp = {
       #   enable = true;
       #   rootDir = ''require("null-ls.utils").root_pattern(".git")'';
       # };
-      pylsp = with lib; {
-        enable = mkDefault true;
-        settings.plugins = {
-          autopep8.enabled = mkDefault false;
-          black.enabled = mkDefault true;
-          flake8.enabled = mkDefault false;
-          isort.enabled = mkDefault true;
-          pycodestyle.enabled = mkDefault false;
-          pyflakes.enabled = mkDefault false;
-          pylsp_mypy = {
-            enabled = mkDefault true;
-          };
-          ruff = {
-            enabled = mkDefault true;
-            executable = mkDefault "${pkgs.ruff}/bin/ruff";
-            lineLength = mkDefault 88;
-            ignore = mkDefault ["E501"];
-          };
-        };
-      };
+      # pylsp = with lib; {
+      #   enable = mkDefault true;
+      #   settings.plugins = {
+      #     autopep8.enabled = mkDefault false;
+      #     black.enabled = mkDefault true;
+      #     flake8.enabled = mkDefault false;
+      #     isort.enabled = mkDefault true;
+      #     pycodestyle.enabled = mkDefault false;
+      #     pyflakes.enabled = mkDefault false;
+      #     pylsp_mypy = {
+      #       enabled = mkDefault true;
+      #     };
+      #     ruff = {
+      #       enabled = mkDefault true;
+      #       executable = mkDefault "${pkgs.ruff}/bin/ruff";
+      #       lineLength = mkDefault 88;
+      #       ignore = mkDefault ["E501"];
+      #     };
+      #   };
+      # };
       rust-analyzer = {
         enable = true;
         installCargo = true;
