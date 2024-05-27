@@ -13,7 +13,7 @@
     rose-pine = {
       enable = true;
       settings = {
-        variant = "dawn";
+        variant = "moon";
         styles.transparency = true;
       };
       # transparentBackground = true;
