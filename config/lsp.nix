@@ -22,7 +22,7 @@
       };
       nixd.enable = true;
       nil_ls.enable = true;
-      pyright.enable = true;
+      pylsp.enable = true;
       # ruff-lsp = {
       #   enable = true;
       #   rootDir = ''require("null-ls.utils").root_pattern(".git")'';
