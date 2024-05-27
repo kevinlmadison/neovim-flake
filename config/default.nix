@@ -175,6 +175,11 @@ in {
       pylint
       ruff
       ruff-lsp
+      python311Packages.python-lsp-server
+      python311Packages.python-lsp-ruff
+      python311Packages.pylsp-rope
+      python311Packages.pylsp-mypy
+      nodePackages.pyright
       shellcheck
       nil
       # vale
