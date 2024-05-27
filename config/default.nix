@@ -1,4 +1,13 @@
-{pkgs, ...}: {
+{pkgs, ...}: let
+  # Fetch the stable nixpkgs branch
+  stableNixpkgs = import (fetchTarball {
+    url = "https://github.com/NixOS/nixpkgs/archive/nixos-23.05.tar.gz";
+    sha256 = "0kz0n4ms62k1w9z9cf83mrjc3lix1sz8vn3lkd5afj5ayxz8pmzk";
+  }) {};
+
+  # Define the package from the stable nixpkgs
+  stablePackage = stableNixpkgs.vimPlugins.none-ls-nvim {};
+in {
   imports = [
     ./keymaps.nix
     ./style.nix
@@ -61,6 +70,19 @@
     };
 
     plugins = {
+      none-ls = {
+        enable = true;
+        # package = stablePackage;
+        sources.formatting = {
+          prisma_format = {
+            enable = false;
+          };
+          black = {
+            enable = true;
+          };
+        };
+        rootDir = ''require("null-ls.utils").root_pattern(".git")'';
+      };
       cursorline = {
         enable = true;
         cursorline = {
@@ -77,12 +99,12 @@
       nvim-tree.enable = true;
       indent-blankline.enable = true;
       friendly-snippets.enable = true;
-      comment-nvim.enable = true;
+      comment.enable = true;
       surround.enable = true;
       navic.enable = true;
       # mini.modules.pairs = {};
       nvim-autopairs.enable = true;
-      nvim-autopairs.checkTs = true;
+      nvim-autopairs.settings.check_ts = true;
       trouble.enable = true;
       ts-context-commentstring.enable = true;
       which-key = {

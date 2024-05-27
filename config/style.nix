@@ -12,8 +12,12 @@
     # };
     rose-pine = {
       enable = true;
-      transparentBackground = true;
-      transparentFloat = true;
+      settings = {
+        variant = "dawn";
+        styles.transparency = true;
+      };
+      # transparentBackground = true;
+      # transparentFloat = true;
     };
   };
   plugins = {
