@@ -28,15 +28,6 @@ in {
       mapleader = " ";
     };
 
-    clipboard = {
-      register = "unnamedplus";
-      providers = {
-        xclip.enable = true;
-        xsel.enable = true;
-        wl-copy.enable = true;
-      };
-    };
-
     options = {
       autoindent = true;
       backspace = "indent,eol,start";
@@ -66,7 +57,7 @@ in {
       signcolumn = "yes";
       updatetime = 50;
       foldlevelstart = 99;
-      clipboard = "unnamedplus";
+      # clipboard = "unnamedplus";
       breakindent = true;
       completeopt = "menu,menuone,noselect";
     };
@@ -223,9 +214,6 @@ in {
       ripgrep
       # rr
       # tmux-sessionizer
-      xclip
-      xsel
-      wl-clipboard
       zig
     ];
   };
