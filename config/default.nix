@@ -32,6 +32,8 @@ in {
       register = "unnamedplus";
       providers = {
         xclip.enable = true;
+        xsel.enable = true;
+        wl-copy.enable = true;
       };
     };
 
@@ -221,6 +223,9 @@ in {
       ripgrep
       # rr
       # tmux-sessionizer
+      xclip
+      xsel
+      wl-clipboard
       zig
     ];
   };
