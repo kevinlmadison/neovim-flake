@@ -22,31 +22,31 @@
       };
       nixd.enable = true;
       nil_ls.enable = true;
-      pyright.enable = true;
-      ruff-lsp = {
-        enable = true;
-        # rootDir = ''require("null-ls.utils").root_pattern(".git")'';
-      };
-      # pylsp = with lib; {
-      #   enable = mkDefault true;
-      #   settings.plugins = {
-      #     autopep8.enabled = mkDefault false;
-      #     black.enabled = mkDefault true;
-      #     flake8.enabled = mkDefault false;
-      #     isort.enabled = mkDefault true;
-      #     pycodestyle.enabled = mkDefault false;
-      #     pyflakes.enabled = mkDefault false;
-      #     pylsp_mypy = {
-      #       enabled = mkDefault true;
-      #     };
-      #     ruff = {
-      #       enabled = mkDefault true;
-      #       executable = mkDefault "${pkgs.ruff}/bin/ruff";
-      #       lineLength = mkDefault 88;
-      #       ignore = mkDefault ["E501"];
-      #     };
-      #   };
+      # pyright.enable = true;
+      # ruff-lsp = {
+      #   enable = true;
+      #   # rootDir = ''require("null-ls.utils").root_pattern(".git")'';
       # };
+      pylsp = with lib; {
+        enable = mkDefault true;
+        settings.plugins = {
+          autopep8.enabled = mkDefault false;
+          black.enabled = mkDefault false;
+          flake8.enabled = mkDefault false;
+          isort.enabled = mkDefault true;
+          pycodestyle.enabled = mkDefault false;
+          pyflakes.enabled = mkDefault false;
+          pylsp_mypy = {
+            enabled = mkDefault true;
+          };
+          ruff = {
+            enabled = mkDefault true;
+            executable = mkDefault "${pkgs.ruff}/bin/ruff";
+            lineLength = mkDefault 88;
+            ignore = mkDefault ["E501"];
+          };
+        };
+      };
       rust-analyzer = {
         enable = true;
         installCargo = true;
@@ -197,6 +197,49 @@
       -- 		set_cmn_lsp_keybinds()
       -- 	end,
       -- })
+
+      local venv_path = os.getenv('VIRTUAL_ENV')
+      local py_path = nil
+      -- decide which python executable to use for mypy
+      if venv_path ~= nil then
+        py_path = venv_path .. "/bin/python3"
+      else
+        py_path = vim.g.python3_host_prog
+      end
+
+      require("lspconfig").pylsp.setup {
+        on_attach = custom_attach,
+        settings = {
+          pylsp = {
+            plugins = {
+              -- formatter options
+              black = { enabled = true },
+              autopep8 = { enabled = false },
+              yapf = { enabled = false },
+              -- linter options
+              pylint = { enabled = false, executable = "pylint" },
+              ruff = { enabled = true },
+              pyflakes = { enabled = false },
+              pycodestyle = { enabled = false },
+              -- type checker
+              pylsp_mypy = {
+                enabled = true,
+                overrides = { "--python-executable", py_path, true },
+                report_progress = true,
+                live_mode = false
+              },
+              -- auto-completion options
+              jedi_completion = { fuzzy = true },
+              -- import sorting
+              isort = { enabled = true },
+            },
+          },
+        },
+        flags = {
+          debounce_text_changes = 200,
+        },
+        capabilities = capabilities,
+      }
 
       -- Python LSP
       require('lspconfig').ruff_lsp.setup {
