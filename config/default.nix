@@ -28,6 +28,13 @@ in {
       mapleader = " ";
     };
 
+    clipboard = {
+      register = "unnamedplus";
+      providers = {
+        xclip.enable = true;
+      };
+    };
+
     options = {
       autoindent = true;
       backspace = "indent,eol,start";
@@ -175,10 +182,16 @@ in {
       pylint
       ruff
       ruff-lsp
-      python311Packages.python-lsp-server
-      python311Packages.python-lsp-ruff
-      python311Packages.pylsp-rope
-      python311Packages.pylsp-mypy
+      (python311.withPackages (ps:
+        with ps; [
+          python-lsp-server
+          python-lsp-ruff
+          # python-lsp-black
+          pylsp-rope
+          pylsp-mypy
+          pyls-isort
+        ]))
+
       nodePackages.pyright
       shellcheck
       nil
