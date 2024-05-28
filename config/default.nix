@@ -179,7 +179,7 @@ in {
         with ps; [
           python-lsp-server
           python-lsp-ruff
-          # python-lsp-black
+          python-lsp-black
           pylsp-rope
           pylsp-mypy
           pyls-isort
