@@ -381,10 +381,40 @@
     {
       key = "<C-x>";
       mode = "i";
-      action = ":lua function () return vim.fn['codeium#Accept']() end<CR>";
+      action = ":lua vim.fn['codeium#Accept']() <CR>";
       options = {
         silent = true;
-        noremap = true;
+        expr = true;
+        desc = "Toggle Trouble LSP References";
+      };
+    }
+    {
+      key = "<C-;>";
+      mode = "i";
+      action = ":lua vim.fn['codeium#CycleCompletions'](1) <CR>";
+      options = {
+        silent = true;
+        expr = true;
+        desc = "Toggle Trouble LSP References";
+      };
+    }
+    {
+      key = "<C-,>";
+      mode = "i";
+      action = ":lua vim.fn['codeium#CycleCompletions'](-1) <CR>";
+      options = {
+        silent = true;
+        expr = true;
+        desc = "Toggle Trouble LSP References";
+      };
+    }
+    {
+      key = "<C-x>";
+      mode = "i";
+      action = ":lua vim.fn['codeium#Clear']() <CR>";
+      options = {
+        silent = true;
+        expr = true;
         desc = "Toggle Trouble LSP References";
       };
     }
