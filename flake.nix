@@ -51,6 +51,7 @@
             echo Welcome to a Neovim dev environment powered by Nixvim -- https://github.com/nix-community/nixvim
             PS1="Nixvim: \\w \$ "
             alias vim='nvim'
+            export NIXPKGS_ALLOW_UNFREE=1
           '';
           packages = with pkgs; [
             nvim
