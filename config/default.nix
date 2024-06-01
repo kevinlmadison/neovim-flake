@@ -83,7 +83,13 @@ in {
         };
         rootDir = ''require("null-ls.utils").root_pattern(".git")'';
       };
-      codeium-vim.enable = true;
+      codeium-vim = {
+        enable = true;
+        settings = {
+          no_map_tab = true;
+          disable_bindings = true;
+        };
+      };
       cursorline = {
         enable = true;
         cursorline = {
