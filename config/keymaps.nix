@@ -379,9 +379,9 @@
       };
     }
     {
-      key = "<C-x>";
+      key = "<C-cr>";
       mode = "i";
-      action = ":lua vim.fn['codeium#Accept']() <CR>";
+      action = "codeium#Accept";
       options = {
         silent = true;
         expr = true;
@@ -391,7 +391,7 @@
     {
       key = "<C-;>";
       mode = "i";
-      action = ":lua vim.fn['codeium#CycleCompletions'](1) <CR>";
+      action = "<cmd>call codeium#CycleCompletions(1)<cr>";
       options = {
         silent = true;
         expr = true;
@@ -401,7 +401,7 @@
     {
       key = "<C-,>";
       mode = "i";
-      action = ":lua vim.fn['codeium#CycleCompletions'](-1) <CR>";
+      action = "<cmd>call codeium#CycleCompletions(-1)<cr>";
       options = {
         silent = true;
         expr = true;
@@ -411,7 +411,7 @@
     {
       key = "<C-x>";
       mode = "i";
-      action = ":lua vim.fn['codeium#Clear']() <CR>";
+      action = "<cmd>call codeium#Clear()<cr>";
       options = {
         silent = true;
         expr = true;
