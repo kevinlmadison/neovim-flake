@@ -379,7 +379,7 @@
       };
     }
     {
-      key = "<C-cr>";
+      key = "<C-a>";
       mode = "i";
       action = "codeium#Accept";
       options = {
