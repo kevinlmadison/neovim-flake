@@ -380,13 +380,23 @@
     }
     {
       key = "<C-a>";
-      mode = "i";
-      action = "codeium#Accept";
+      action = "codeium#Accept()";
+      mode = ["i"];
       options = {
         silent = true;
+        script = true;
+        nowait = true;
         expr = true;
-        desc = "Toggle Trouble LSP References";
+        desc = "Codeium Accept";
       };
+      # key = "<C-a>";
+      # mode = "i";
+      # action = "codeium#Accept";
+      # options = {
+      #   silent = true;
+      #   expr = true;
+      #   desc = "Toggle Trouble LSP References";
+      # };
     }
     {
       key = "<C-;>";
