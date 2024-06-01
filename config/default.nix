@@ -83,6 +83,7 @@ in {
         };
         rootDir = ''require("null-ls.utils").root_pattern(".git")'';
       };
+      codeium-nvim.enable = true;
       cursorline = {
         enable = true;
         cursorline = {
