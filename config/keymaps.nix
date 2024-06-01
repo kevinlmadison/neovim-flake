@@ -378,5 +378,15 @@
         desc = "Toggle Trouble LSP References";
       };
     }
+    {
+      key = "<C-x>";
+      mode = "i";
+      action = ":lua function () return vim.fn['codeium#Accept']() end<CR>";
+      options = {
+        silent = true;
+        noremap = true;
+        desc = "Toggle Trouble LSP References";
+      };
+    }
   ];
 }
