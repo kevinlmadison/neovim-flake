@@ -181,7 +181,6 @@ in {
       nodePackages.jsonlint
       pylint
       ruff
-      ruff-lsp
       (python311.withPackages (ps:
         with ps; [
           python-lsp-server
@@ -192,7 +191,7 @@ in {
           pyls-isort
         ]))
 
-      nodePackages.pyright
+      pyright
       shellcheck
       nil
       # vale
@@ -210,12 +209,12 @@ in {
       # llvmPackages_17.bintools-unwrapped
       marksman
 
-      (nerdfonts.override {
-        fonts = [
-          "JetBrainsMono"
-          "RobotoMono"
-        ];
-      })
+      # (nerdfonts.override {
+      #   fonts = [
+      #     "JetBrainsMono"
+      #     "RobotoMono"
+      #   ];
+      # })
 
       python3
       ripgrep

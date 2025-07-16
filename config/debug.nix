@@ -33,7 +33,7 @@
 
       dap.adapters.lldb = {
           type = 'executable',
-          command = '${pkgs.lldb_17}/bin/lldb-vscode', -- adjust as needed, must be absolute path
+          command = '${pkgs.lldb_20}/bin/lldb-vscode', -- adjust as needed, must be absolute path
           name = 'lldb'
       }
 

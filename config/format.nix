@@ -28,9 +28,11 @@
     #     stdin = true;
     #   };
     # };
-    formatOnSave = {
-      lspFallback = true;
-      timeoutMs = 2000;
+    settings = {
+      format_on_save = {
+        lspFallback = true;
+        timeoutMs = 2000;
+      };
     };
   };
 
