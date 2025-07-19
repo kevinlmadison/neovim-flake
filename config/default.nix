@@ -28,7 +28,7 @@ in {
       mapleader = " ";
     };
 
-    options = {
+    opts = {
       autoindent = true;
       backspace = "indent,eol,start";
       smartcase = true;
@@ -70,6 +70,13 @@ in {
     };
 
     plugins = {
+      mini = {
+        enable = true;
+        mockDevIcons = true;
+        modules = {
+          icons = {};
+        };
+      };
       none-ls = {
         enable = true;
         # package = stablePackage;
@@ -81,9 +88,9 @@ in {
             enable = true;
           };
         };
-        rootDir = ''require("null-ls.utils").root_pattern(".git")'';
+        settings.root_dir = ''require("null-ls.utils").root_pattern(".git")'';
       };
-      codeium-vim = {
+      windsurf-vim = {
         enable = true;
         settings = {
           no_map_tab = true;
@@ -92,10 +99,12 @@ in {
       };
       cursorline = {
         enable = true;
-        cursorline = {
-          enable = true;
-          timeout = 0;
-          number = true;
+        settings = {
+          cursorline = {
+            enable = true;
+            timeout = 0;
+            number = true;
+          };
         };
       };
       oil.enable = true;
@@ -107,7 +116,7 @@ in {
       indent-blankline.enable = true;
       friendly-snippets.enable = true;
       comment.enable = true;
-      surround.enable = true;
+      vim-surround.enable = true;
       navic.enable = true;
       # mini.modules.pairs = {};
       nvim-autopairs.enable = true;
@@ -115,7 +124,7 @@ in {
       trouble.enable = true;
       ts-context-commentstring.enable = true;
       which-key = {
-        enable = true;
+        enable = false;
         registrations = {
           "<leader>c" = {
             name = "[C]ode";

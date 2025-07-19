@@ -1,11 +1,13 @@
 {...}: {
   plugins.nvim-ufo = {
     enable = true;
-    providerSelector = ''
-      function(bufnr, filetype, buftype)
-       			return { 'treesitter', 'indent' }
-       		end
-    '';
+    settings = {
+      providerSelector = ''
+        function(bufnr, filetype, buftype)
+         			return { 'treesitter', 'indent' }
+         		end
+      '';
+    };
   };
   extraConfigLua = ''
     vim.keymap.set('n', 'zK', function()

@@ -23,15 +23,19 @@
   plugins = {
     lualine = {
       enable = true;
-      iconsEnabled = false;
-      globalstatus = true;
-      componentSeparators = {
-        left = "|";
-        right = "|";
-      };
-      sectionSeparators = {
-        left = "";
-        right = "";
+      settings = {
+        options = {
+          iconsEnabled = false;
+          globalstatus = true;
+          componentSeparators = {
+            left = "|";
+            right = "|";
+          };
+          sectionSeparators = {
+            left = "";
+            right = "";
+          };
+        };
       };
     };
   };

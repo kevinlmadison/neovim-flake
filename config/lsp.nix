@@ -3,7 +3,7 @@
   lib,
   ...
 }: {
-  plugins.rust-tools.enable = true;
+  # plugins.rustaceanvim.enable = true;
   plugins.lsp = {
     servers = {
       ansiblels = {
@@ -14,9 +14,9 @@
       clangd.enable = true;
       cmake.enable = true;
       gopls.enable = true;
-      helm-ls.enable = true;
+      helm_ls.enable = true;
       jsonls.enable = true;
-      lua-ls = {
+      lua_ls = {
         enable = true;
         settings.telemetry.enable = false;
       };
@@ -47,12 +47,12 @@
           };
         };
       };
-      rust-analyzer = {
+      rust_analyzer = {
         enable = true;
         installCargo = true;
         installRustc = true;
       };
-      tsserver.enable = true;
+      ts_ls.enable = true;
       yamlls.enable = true;
       zls.enable = true;
     };
@@ -253,7 +253,7 @@
       }
 
       -- Python LSP
-      require('lspconfig').ruff_lsp.setup {
+      require('lspconfig').ruff.setup {
         init_options = {
           settings = {
             -- Any extra CLI arguments for `ruff` go here.
@@ -261,7 +261,7 @@
           }
         }
       }
-      -- require("lspconfig").ruff_lsp.setup({
+      -- require("lspconfig").ruff.setup({
       -- 	on_attach = function()
       -- 		set_cmn_lsp_keybinds()
       -- 	end,
@@ -273,7 +273,7 @@
           return vim.loop.cwd()
         end,
         settings = {
-          ['rust-analyzer'] = {
+          ['rust_analyzer'] = {
             cargo = {
               allFeatures = true,
             },
@@ -285,7 +285,7 @@
       })
 
       -- Typescript/Javascript LSP
-      require("lspconfig").tsserver.setup({
+      require("lspconfig").ts_ls.setup({
       	on_attach = function()
           set_cmn_lsp_keybinds()
       	end,
@@ -296,7 +296,7 @@
           set_cmn_lsp_keybinds()
         end,
       	settings = {
-      		-- spawn additional tsserver instance to calculate diagnostics on it
+      		-- spawn additional ts_ls instance to calculate diagnostics on it
       		separate_diagnostic_server = true,
       		-- "change"|"insert_leave" determine when the client asks the server about diagnostic
       		publish_diagnostic_on = "insert_leave",
@@ -305,21 +305,21 @@
       		-- to include all supported code actions
       		-- specify commands exposed as code_actions
       		expose_as_code_action = {},
-      		-- string|nil - specify a custom path to `tsserver.js` file, if this is nil or file under path
+      		-- string|nil - specify a custom path to `ts_ls.js` file, if this is nil or file under path
       		-- not exists then standard path resolution strategy is applied
-      		tsserver_path = nil,
-      		-- specify a list of plugins to load by tsserver, e.g., for support `styled-components`
+      		ts_ls_path = nil,
+      		-- specify a list of plugins to load by ts_ls, e.g., for support `styled-components`
       		-- (see 💅 `styled-components` support section)
-      		tsserver_plugins = {},
+      		ts_ls_plugins = {},
       		-- this value is passed to: https://nodejs.org/api/cli.html#--max-old-space-sizesize-in-megabytes
       		-- memory limit in megabytes or "auto"(basically no limit)
-      		tsserver_max_memory = "auto",
+      		ts_ls_max_memory = "auto",
       		-- described below
-      		tsserver_format_options = {},
-      		tsserver_file_preferences = {},
-      		-- locale of all tsserver messages, supported locales you can find here:
+      		ts_ls_format_options = {},
+      		ts_ls_file_preferences = {},
+      		-- locale of all ts_ls messages, supported locales you can find here:
       		-- https://github.com/microsoft/TypeScript/blob/3c221fc086be52b19801f6e8d82596d04607ede6/src/compiler/utilitiesPublic.ts#L620
-      		tsserver_locale = "en",
+      		ts_ls_locale = "en",
       		-- mirror of VSCode's `typescript.suggest.completeFunctionCalls`
       		complete_function_calls = false,
       		include_completions_with_insert_text = true,
