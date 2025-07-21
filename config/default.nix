@@ -208,7 +208,7 @@ in {
       # Debuggers / misc deps
       # asm-lsp
       # bashdb
-      # clang-tools
+      clang-tools
       # delve
       # fd
       # gdb
