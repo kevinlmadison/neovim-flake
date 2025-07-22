@@ -380,18 +380,18 @@
     }
     {
       key = "<C-a>";
-      action = "windsurf#Accept()";
+      action = "codeium#Accept()";
       mode = ["i"];
       options = {
         silent = true;
         script = true;
         nowait = true;
         expr = true;
-        desc = "windsurf Accept";
+        desc = "codeium Accept";
       };
       # key = "<C-a>";
       # mode = "i";
-      # action = "windsurf#Accept";
+      # action = "codeium#Accept";
       # options = {
       #   silent = true;
       #   expr = true;
@@ -401,7 +401,7 @@
     {
       key = "<C-;>";
       mode = "i";
-      action = "<cmd>call windsurf#CycleCompletions(1)<cr>";
+      action = "<cmd>call codeium#CycleCompletions(1)<cr>";
       options = {
         silent = true;
         expr = true;
@@ -411,7 +411,7 @@
     {
       key = "<C-,>";
       mode = "i";
-      action = "<cmd>call windsurf#CycleCompletions(-1)<cr>";
+      action = "<cmd>call codeium#CycleCompletions(-1)<cr>";
       options = {
         silent = true;
         expr = true;
@@ -421,7 +421,7 @@
     {
       key = "<C-x>";
       mode = "i";
-      action = "<cmd>call windsurf#Clear()<cr>";
+      action = "<cmd>call codeium#Clear()<cr>";
       options = {
         silent = true;
         expr = true;
